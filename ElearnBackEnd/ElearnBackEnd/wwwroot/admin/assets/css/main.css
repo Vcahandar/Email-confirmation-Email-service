@@ -1,0 +1,31 @@
+﻿.info {
+    margin-top: 85px;
+}
+
+.active-status{
+    height:20px;
+    width:20px;
+    border-radius:50%;
+    background-color:forestgreen;
+    
+}
+
+.deActive-status {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.slider-content img{
+    width:350px;
+    height:400pxl
+}
+
+.infoDs{
+    margin-top:55px;
+}
+
+.colorTb {
+    background-color: #011122;
+}

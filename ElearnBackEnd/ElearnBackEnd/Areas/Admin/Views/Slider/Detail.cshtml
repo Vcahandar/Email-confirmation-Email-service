@@ -1,0 +1,12 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Deatil";
+}
+
+<div class="container my-5">
+    <h1>Slider Detail</h1>
+    <div class="slider-content">
+        <img src="~/images/@Model.Image" />
+    </div>
+    <a class="btn btn-outline-info" asp-action="Index"> <------ Back</a>
+</div>

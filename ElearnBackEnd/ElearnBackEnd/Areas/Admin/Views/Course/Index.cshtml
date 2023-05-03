@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "News";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table colorTb table-dark">
+                    <a class="btn btn-primary my-5 "  asp-action="Create">Create</a>
+
+                    <thead>
+                        <tr>
+                            <th> Image </th>
+                            <th> Title </th>
+                            <th> Author </th>
+                            <th> Price </th>
+                            <th> Operations </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var course in Model)
+                        {
+                            <tr>
+                                <td class="img">
+                                    <img src="~/images/@course.Images.Where(m => m.IsMain).FirstOrDefault()?.Image" />
+                                </td>
+                                <td class="title">
+                                    @course.Title
+                                </td>
+                                <td class="title">
+                                    @course.Author.FullName
+                                </td>
+                                <td class="title">
+                                    $ @course.Price
+                                </td>
+
+                                <td style="display:-webkit-inline-box">
+                                    <a class="btn btn-outline-primary" asp-action="Detail" asp-route-id="@course.Id">Info</a>
+                                    <a class="btn btn-outline-info" asp-action="Edit" asp-route-id="@course.Id">Edit</a>
+                                    <form asp-action="Delete" method="post" asp-route-id="@course.Id">
+                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,42 @@
+﻿@model News
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container">
+    <h1>Slider info detail</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th> Image </th>
+                <th> Title </th>
+                <th> Publisher Name </th>
+                <th> Time </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="img-detail">
+                        <img class="img-fluid" src="~/images/@Model.Image" />
+                    </div>
+
+                </td>
+                <td>
+                    @Model.Title
+                </td>
+                <td style="white-space:normal">
+                    @Model.Author.FullName
+                </td>
+                <td style="white-space:normal">
+                    @Model.CreateTime.ToString("dd/MM/yyyy")
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="back">
+        <a class="btn btn-outline-info" asp-action="Index"> <------ Back</a>
+    </div>
+</div>
+
